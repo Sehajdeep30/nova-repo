@@ -1,12 +1,13 @@
-const express = require('express')
-const app = express()
+const express = require("express");
+const app = express();
+const loginRoute = require("./routes/loginRoute");
+const db = require("./models");
 
-// respond with "hello world" when a GET request is made to the homepage
-app.get('/', (req, res) => {
-  res.send('hello world')
-})
+//Routes
+app.use("/", loginRoute);
 
-app.listen(3001,()=>{
-    console.log("we go"
-    )
-})
+db.sequelize.sync().then(() => {
+  app.listen(3001, () => {
+    console.log("we go");
+  });
+});
