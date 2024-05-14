@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 var fetchuser = require('../middleware/fetchuser');
 
-const JWT_SECRET = 'Harryisagoodb$oy';
+const JWT_SECRET = 'Medbudearlybird';
 
 // ROUTE 1: Create a User using: POST "/api/auth/createuser". No login required
 router.post('/createuser', [
@@ -21,7 +21,7 @@ router.post('/createuser', [
   }
   try {
     // Check whether the user with this email exists already
-    let user = await User.findOne({ email: req.body.email });
+    let user = await User.findOne({ useremail: req.body.useremail });
     if (user) {
       return res.status(400).json({ error: "Sorry a user with this email already exists" })
     }
@@ -30,9 +30,9 @@ router.post('/createuser', [
 
     // Create a new user
     user = await User.create({
-      name: req.body.name,
+      username: req.body.username,
       password: secPass,
-      email: req.body.email,
+      useremail: req.body.useremail,
     });
     const data = {
       user: {
@@ -54,7 +54,7 @@ router.post('/createuser', [
 
 // ROUTE 2: Authenticate a User using: POST "/api/auth/login". No login required
 router.post('/login', [
-  body('email', 'Enter a valid email').isEmail(),
+  body('useremail', 'Enter a valid email').isEmail(),
   body('password', 'Password cannot be blank').exists(),
 ], async (req, res) => {
   let success = false;
@@ -64,9 +64,9 @@ router.post('/login', [
     return res.status(400).json({ errors: errors.array() });
   }
 
-  const { email, password } = req.body;
+  const { useremail, password } = req.body;
   try {
-    let user = await User.findOne({ email });
+    let user = await User.findOne({ useremail });
     if (!user) {
       success = false
       return res.status(400).json({ error: "Please try to login with correct credentials" });
