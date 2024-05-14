@@ -1,20 +1,18 @@
-module.exports = (sequelize, DataTypes) => {
-    const Med_stock = sequelize.define(
-  'Insti_rec',
-  {
-    instiId: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
+const mongoose = require('mongoose');
 
-    
-    instiName: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
+const { Schema } = mongoose;
 
+const instiRecSchema = new Schema({
+  instiId: {
+    type: String,
+    required: true,
   },
-);
+  instiName: {
+    type: String,
+    required: true,
+  },
+});
 
-return Insti_rec;}
+const InstiRec = mongoose.model('InstiRec', instiRecSchema);
 
+module.exports = InstiRec;

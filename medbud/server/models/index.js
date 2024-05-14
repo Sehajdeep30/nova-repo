@@ -2,19 +2,22 @@
 
 const fs = require('fs');
 const path = require('path');
-const Sequelize = require('sequelize');
+const mongoose = require('mongoose');
 const process = require('process');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
-let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+mongoose.connect(config.mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const dbConnection = mongoose.connection;
+
+dbConnection.on('error', console.error.bind(console, 'MongoDB connection error:'));
+dbConnection.once('open', () => console.log('Connected to MongoDB successfully'));
 
 fs
   .readdirSync(__dirname)
@@ -27,8 +30,8 @@ fs
     );
   })
   .forEach(file => {
-    const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
-    db[model.name] = model;
+    const model = require(path.join(__dirname, file));
+    db[model.modelName] = model;
   });
 
 Object.keys(db).forEach(modelName => {
@@ -36,8 +39,5 @@ Object.keys(db).forEach(modelName => {
     db[modelName].associate(db);
   }
 });
-
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
 
 module.exports = db;

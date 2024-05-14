@@ -10,6 +10,7 @@ import Footer from "./components/footer/Footer";
 import VirtualConnect from "./components/VirtualConnect";
 import Resource from "./components/Resource";
 import AdminLoginSignup from "./components/AdminLoginSignup/AdminLoginSignup";
+import Signup from "./components/LoginSignup/Signup";
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
           </Route>
           <Route exact path="/loginsignup">
             <LoginSignup/>
+          </Route>
+          <Route exact path="/signup">
+            <Signup/>
           </Route>
           <Route exact path="/adminloginsignup">
             <AdminLoginSignup/>

@@ -9,29 +9,29 @@ const LoginSignup = () => {
 
   return (
     <div className="container">
-        <div className="header">
+      <div className="header">
         <div className="text">Log-in</div>
         <div className="underline"></div>
-        </div>
-        <div className="inputs">
+      </div>
+      <div className="inputs">
         <div className="input">
-            <img src={email_icon} alt="" />
-            <input type="email" placeholder="Email Address" />
+          <img src={email_icon} alt="" />
+          <input type="email" placeholder="Email Address" />
         </div>
         <div className="input">
-            <img src={password_icon} alt="" />
-            <input type="password" placeholder="Password"/>
+          <img src={password_icon} alt="" />
+          <input type="password" placeholder="Password" />
         </div>
-        </div>
+      </div>
 
-         <div className="forgot-password">Lost Password? <span>click here!</span></div>
-      
-        <div className="submit-container">
-            
-            <button className="submit" type="submit">Log in</button>
-        </div>
-  
-  <span className="sign-up">Don't have an account?  <a href='#'>sign-up</a></span>
+      <div className="forgot-password">Lost Password? <span>click here!</span></div>
+
+      <div className="submit-container">
+
+        <button className="submit" type="submit">Log in</button>
+      </div>
+
+      <span className="sign-up">Don't have an account?  <a href='http://localhost:3000/signup'>sign-up</a></span>
 
     </div>
 

@@ -1,13 +1,16 @@
+const connectToMongo=require('./db');
 const express = require("express");
+var cors =require('cors');
+connectToMongo();
 const app = express();
+const port=5000
 const loginRoute = require("./routes/loginRoute");
-const db = require("./models");
 
+app.use(cors())
+app.use(express.json())
 //Routes
-app.use("/", loginRoute);
+app.use("/auth", loginRoute);
 
-db.sequelize.sync().then(() => {
-  app.listen(3001, () => {
-    console.log("we go");
-  });
-});
+app.listen(port,()=>{
+  console.log(`Medbud server listeninng at https://localhost:${port}`)
+})
