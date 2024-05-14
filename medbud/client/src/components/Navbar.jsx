@@ -31,7 +31,7 @@ const Navbar = () => {
         </li>
        
       </ul>
-      <Link className="btn btn-outline-success" to="/adminloginsignup">Admin Log-in</Link>
+      <Link className="btn btn-outline-success" to="/adminloginsignup">Doctor Log-in</Link>
     </div>
   </div>
 </nav>
