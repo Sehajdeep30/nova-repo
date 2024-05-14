@@ -1,16 +1,16 @@
 const express = require('express')
-const app = express()
 const router = express.Router();
+const { User, sequelize } = require("../models");
 
 
-
-router.get("/loginRoute", (req, res) => {
-  res.send("hello world");  
+router.get("/loginRoute", (req, res) =>  {
+  res.send("hello world");
 });
 
 router.post("/loginRoute",async (req, res) => {
-  const data = await req.body();
+  const data = req.body;
   await User.create(data);
+  res.json(data);
 });
 
 

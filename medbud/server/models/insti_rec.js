@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Med_stock = sequelize.define(
+    const Insti_rec = sequelize.define(
   'Insti_rec',
   {
     instiId: {
