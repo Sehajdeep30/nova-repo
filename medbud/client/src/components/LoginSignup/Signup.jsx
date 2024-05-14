@@ -1,19 +1,23 @@
 import React from 'react'
-import './LoginSignup.css'
+import './Signup.css'
 
 import user_icon from '../Assets/person.png'
 import email_icon from '../Assets/email.png'
 import password_icon from '../Assets/password.png'
-
-const LoginSignup = () => {
-
+const Signup = () => {
   return (
-    <div className="container">
+    <div>
+      <div className="container">
         <div className="header">
-        <div className="text">Log-in</div>
+        <div className="text">Sign-up</div>
         <div className="underline"></div>
         </div>
         <div className="inputs">
+             <div className="input">
+            <img src={user_icon} alt="" />
+            <input type="text" placeholder="Name" />
+        </div>
+      
         <div className="input">
             <img src={email_icon} alt="" />
             <input type="email" placeholder="Email Address" />
@@ -24,18 +28,17 @@ const LoginSignup = () => {
         </div>
         </div>
 
-         <div className="forgot-password">Lost Password? <span>click here!</span></div>
       
         <div className="submit-container">
             
-            <button className="submit" type="submit">Log in</button>
+            <button className="submit" type="submit">Sign-up</button>
         </div>
   
-  <span className="sign-up">Don't have an account?  <a href='#'>sign-up</a></span>
+  <span className="sign-up">Already have an account.  <a href='#'>Log-in</a></span>
 
     </div>
-
+    </div>
   )
 }
 
-export default LoginSignup
+export default Signup
