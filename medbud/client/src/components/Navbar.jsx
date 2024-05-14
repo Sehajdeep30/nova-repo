@@ -29,7 +29,9 @@ const Navbar = () => {
         <li className="nav-item">
           <Link className="nav-link" to="/loginsignup">Login/Signup</Link>
         </li>
+       
       </ul>
+      <Link className="btn btn-outline-success" to="/adminloginsignup">Admin Log-in</Link>
     </div>
   </div>
 </nav>

@@ -9,6 +9,7 @@ import LoginSignup from "./components/LoginSignup/LoginSignup";
 import Footer from "./components/footer/Footer";
 import VirtualConnect from "./components/VirtualConnect";
 import Resource from "./components/Resource";
+import AdminLoginSignup from "./components/AdminLoginSignup/AdminLoginSignup";
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route exact path="/loginsignup">
             <LoginSignup/>
+          </Route>
+          <Route exact path="/adminloginsignup">
+            <AdminLoginSignup/>
           </Route>
         </Switch>
       </Router>
