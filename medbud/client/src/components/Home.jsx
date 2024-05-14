@@ -58,6 +58,7 @@ const Home = () => {
           <a href="#">Learn More</a>
         </div>
       </div>
+      <hr />
     </section>
     <section className="section__container about__container">
       <div className="about__content">
@@ -84,6 +85,104 @@ const Home = () => {
       </div>
       <div className="about__image">
         <img src="https://raw.githubusercontent.com/WebDesignMastery/HealthCare_22-07-23/90dd52aa02bce2a3d1391078412a70dfdbd884ae/assets/choose-us.jpg" alt="image" />
+      </div>
+    </section>
+    <hr />
+    <section className="section__container why__container">
+      <div className="why__image">
+        <img src="https://raw.githubusercontent.com/WebDesignMastery/HealthCare_22-07-23/90dd52aa02bce2a3d1391078412a70dfdbd884ae/assets/header.jpg" />
+      </div>
+      <div className="why__content">
+        <h2 className="section__header">Why Choose Us</h2>
+        <p>
+          With a steadfast commitment to your well-being, our team of highly
+          trained healthcare professionals ensures that you receive nothing
+          short of exceptional patient experiences.
+        </p>
+        <div className="why__grid">
+          <span><i className="ri-hand-heart-line"></i></span>
+          <div>
+            <h4>Intensive Care</h4>
+            <p>
+              Our Intensive Care Unit is equipped with advanced technology and
+              staffed by team of professionals
+            </p>
+          </div>
+          <span><i className="ri-truck-line"></i></span>
+          <div>
+            <h4>Free Ambulance Car</h4>
+            <p>
+              A compassionate initiative to prioritize your health and
+              well-being without any financial burden.
+            </p>
+          </div>
+          <span><i className="ri-hospital-line"></i></span>
+          <div>
+            <h4>Medical and Surgical</h4>
+            <p>
+              Our Medical and Surgical services offer advanced healthcare
+              solutions to address medical needs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+
+    <section className="section__container doctors__container">
+      <div className="doctors__header">
+        <div className="doctors__header__content">
+          <h2 className="section__header">Our Special Doctors</h2>
+          <p>
+            We take pride in our exceptional team of doctors, each a specialist
+            in their respective fields.
+          </p>
+        </div>
+        <div className="doctors__nav">
+          <span><i className="ri-arrow-left-line"></i></span>
+          <span><i className="ri-arrow-right-line"></i></span>
+        </div>
+      </div>
+      <div className="doctors__grid">
+        <div className="doctors__card">
+          <div className="doctors__card__image">
+            <img src="https://raw.githubusercontent.com/WebDesignMastery/HealthCare_22-07-23/90dd52aa02bce2a3d1391078412a70dfdbd884ae/assets/doctor-3.jpg" alt="doctor" />
+            <div className="doctors__socials">
+              <span><i className="ri-instagram-line"></i></span>
+              <span><i className="ri-facebook-fill"></i></span>
+              <span><i className="ri-heart-fill"></i></span>
+              <span><i className="ri-twitter-fill"></i></span>
+            </div>
+          </div>
+          <h4>Dr. Emily Smith</h4>
+          <p>Cardiologist</p>
+        </div>
+        <div className="doctors__card">
+          <div className="doctors__card__image">
+            <img src="https://raw.githubusercontent.com/WebDesignMastery/HealthCare_22-07-23/90dd52aa02bce2a3d1391078412a70dfdbd884ae/assets/doctor-2.jpg" alt="doctor" />
+            <div className="doctors__socials">
+              <span><i className="ri-instagram-line"></i></span>
+              <span><i className="ri-facebook-fill"></i></span>
+              <span><i className="ri-heart-fill"></i></span>
+              <span><i className="ri-twitter-fill"></i></span>
+            </div>
+          </div>
+          <h4>Dr. James Anderson</h4>
+          <p>Neurosurgeon</p>
+        </div>
+        <div className="doctors__card">
+          <div className="doctors__card__image">
+            <img src="https://raw.githubusercontent.com/WebDesignMastery/HealthCare_22-07-23/90dd52aa02bce2a3d1391078412a70dfdbd884ae/assets/doctor-1.jpg" alt="doctor" />
+            <div className="doctors__socials">
+              <span><i className="ri-instagram-line"></i></span>
+              <span><i className="ri-facebook-fill"></i></span>
+              <span><i className="ri-heart-fill"></i></span>
+              <span><i className="ri-twitter-fill"></i></span>
+            </div>
+          </div>
+          <h4>Dr. Michael Lee</h4>
+          <p>Dermatologist</p>
+        </div>
       </div>
     </section>
     </div>
