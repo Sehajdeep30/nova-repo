@@ -8,7 +8,6 @@ import password_icon from '../Assets/password.png'
 
 const LoginSignup = () => {
   const [credentials,setCredentials]=useState({useremail:"",password:''});
-  const history=useNavigate();
 
   const handleSubmit=async (e)=>{
     e.preventDefault();
@@ -25,7 +24,6 @@ const LoginSignup = () => {
         //Save the auth token and redirect
         localStorage.setItem('token',json.authtoken);
         // props.showAlert("Logged in Successfully","success")
-        history('/')
         
     }
     else{
@@ -47,7 +45,7 @@ const onChange=(e)=>{
         <div className="inputs">
           <div className="input">
             <img src={email_icon} alt="" />
-            <input type="email" placeholder="Email Address" />
+            <input type="email" placeholder="Email Address" onChange={onChange}/>
           </div>
           <div className="input">
             <img src={password_icon} alt="" />

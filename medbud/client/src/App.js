@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom"; // Import necessary components
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -14,38 +14,31 @@ import Signup from "./components/LoginSignup/Signup";
 
 function App() {
   return (
-    <>
-      <Router>
-        <Navbar />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/about">
-            <About/>
-          </Route>
-          <Route exact path="/service">
-            <Service/>
-          </Route>
-          <Route exact path="/virtual">
-            <VirtualConnect/>
-          </Route>
-          <Route exact path="/resource">
-            <Resource/>
-          </Route>
-          <Route exact path="/loginsignup">
-            <LoginSignup/>
-          </Route>
-          <Route exact path="/signup">
-            <Signup/>
-          </Route>
-          <Route exact path="/adminloginsignup">
-            <AdminLoginSignup/>
-          </Route>
-        </Switch>
-      </Router>
-      <Footer/>
-    </>
+    <BrowserRouter>
+
+      <Navbar/>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Home />}/>
+            
+          <Route path="/about" element={<About />}/>
+            
+          <Route path="/service" element={<Service />}/>
+            
+          <Route path="/virtual" element={<VirtualConnect />}/>
+            
+          <Route path="/resource" element={<Resource />}/>
+            
+          <Route path="/loginsignup" element={<LoginSignup />}/>
+            
+          <Route path="/signup" element={<Signup />}/>
+            
+          <Route path="/adminloginsignup" element={<AdminLoginSignup />}/>
+            
+        </Routes>
+      </div>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
