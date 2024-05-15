@@ -22,9 +22,8 @@ const LoginSignup = () => {
     console.log(json);
     if(json.success){
         //Save the auth token and redirect
-        localStorage.setItem('token',json.authtoken);
-        // props.showAlert("Logged in Successfully","success")
-        
+      localStorage.setItem('token',json.authtoken);
+        // props.showAlert("Logged in Successfully","success")        
     }
     else{
         // props.showAlert("Invalid Details","danger")

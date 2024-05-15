@@ -1,4 +1,4 @@
 const mongoose = require('mongoose');
-const mongoURI="mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.9.1"
+const mongoURI="mongodb+srv://dhruvpandey0597:dhruvpandey56@cluster0.m50ucvu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 const connectToMongo=()=>{mongoose.connect(mongoURI)};
 module.exports=connectToMongo;
